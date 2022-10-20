@@ -5,12 +5,21 @@ public class Professor{
     private int experience = 0;
     private String subject = "";
     private Human human;
+    private static int count_prof;
+    public static int getCountProf() {
+        return count_prof;
+    }
+    public static void setCountProf(int newCountProf) {
+        count_prof = newCountProf;
+    }
+
     public Professor()
     {
         human = new Human();
         wage = 20000;
         experience = 15;
         subject = "Математика";
+        count_prof++;
     }
     public Professor(Human human)
     {
@@ -18,6 +27,7 @@ public class Professor{
         wage = 25000;
         experience = 20;
         subject = "Физика";
+        count_prof++;
     }
     public Professor(Human human, int wg, String sub, int exp)
     {
@@ -25,11 +35,12 @@ public class Professor{
         this.wage = wg;
         this.experience = exp;
         this.subject = sub;
+        count_prof++;
     }
 	public void read_professor()
 	{
 		Scanner in = new Scanner(System.in);
-        System.out.print("\nВвод : \n");
+        System.out.print("\nВвод преподавателя: \n");
         this.human = human.read_human();
         System.out.print("Введите размер зарплаты: ");
         wage = in.nextInt();

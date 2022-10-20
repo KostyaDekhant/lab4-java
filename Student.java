@@ -4,6 +4,14 @@ public class Student{
     private int sholarship = 0;
     private String group = "";
     private Human human;
+    private static int count_stud;
+
+    public static int getCountStud() {
+        return count_stud;
+    }
+    public static void setCountStud(int newCountStud) {
+        count_stud = newCountStud;
+    }
     public Student()
     {
         human = new Human();
@@ -25,7 +33,7 @@ public class Student{
 	public void read_student()
 	{
 		Scanner in = new Scanner(System.in);
-        System.out.print("\nВвод : \n");
+        System.out.print("\nВвод студента: \n");
         this.human = human.read_human();
         System.out.print("Введите размер стипендии: ");
         sholarship = in.nextInt();
@@ -88,4 +96,9 @@ public class Student{
             this.sholarship = in.nextInt();
         }
     }
+    public void getSholarship(Sholar sh)
+    {
+        sh.sholar = this.sholarship;
+    }
 }
+
